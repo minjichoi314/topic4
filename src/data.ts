@@ -1,0 +1,23 @@
+export type Food = {name:string; price:number; group:string};
+export type Scenario = {title:string; desc:string; illustration:string; request:string; budget:number; minutes:number; allergy:string; preference:string};
+export const scenarios:Scenario[] = [
+{title:'바쁜 우리 가족의 건강한 식사',desc:'학원과 학교로 바쁜 가족을 위한 쉽고 건강한 식단이 필요해요.',illustration:'request-0.webp',request:'조리 시간이 짧으면서도 균형 잡힌 식사를 준비해요.',budget:30000,minutes:25,allergy:'없음',preference:'간단한 조리'},
+{title:'편식이 심한 동생',desc:'채소를 잘 먹지 않는 동생을 위한 식단이 필요해요.',illustration:'request-1.webp',request:'채소를 맛있게 먹는 식사를 만들어요.',budget:28000,minutes:35,allergy:'없음',preference:'채소를 잘게 썬 음식'},
+{title:'운동하는 가족',desc:'운동하는 가족을 위한 영양 가득한 식단을 만들어요.',illustration:'request-2.webp',request:'활동 후 필요한 식사를 계획해요.',budget:34000,minutes:35,allergy:'없음',preference:'단백질 식품'},
+{title:'할머니의 건강식',desc:'당 조절이 필요한 할머니를 위한 식단이 필요해요.',illustration:'request-3.webp',request:'자극적이지 않고 균형 잡힌 식사를 준비해요.',budget:33000,minutes:40,allergy:'없음',preference:'싱겁고 부드러운 음식'},
+{title:'지구를 생각하는 가족',desc:'환경을 위한 지속가능한 식단을 실천하고 싶어요.',illustration:'request-4.webp',request:'낭비를 줄이고 제철 채소를 활용해요.',budget:30000,minutes:40,allergy:'없음',preference:'식물성 식품'},
+{title:'예산이 제한된 가족',desc:'한 달 식비를 절약하면서 건강한 식단이 필요해요.',illustration:'request-5.webp',request:'한 끼 비용을 줄이되 식품군은 다양하게 구성해요.',budget:22000,minutes:35,allergy:'없음',preference:'가성비 좋은 재료'},
+{title:'늦은 저녁을 먹는 가족',desc:'저녁 시간이 늦어 가볍지만 영양 있는 식사를 원해요.',illustration:'request-6.webp',request:'저녁 준비 부담을 줄여요.',budget:28000,minutes:20,allergy:'없음',preference:'가벼운 저녁'},
+{title:'성장기 청소년 가족',desc:'키가 크고 싶은 성장기 가족을 위한 식단을 짜주세요.',illustration:'request-7.webp',request:'여러 식품군을 균형 있게 활용해요.',budget:35000,minutes:40,allergy:'우유',preference:'우유 제외'},
+{title:'채식 위주의 가족',desc:'육류를 적게 먹는 가족을 위한 맛있는 채식 식단이 필요해요.',illustration:'request-8.webp',request:'콩류와 채소를 활용해요.',budget:27000,minutes:35,allergy:'없음',preference:'채식 위주'},
+{title:'지역 농산물을 활용한 식단',desc:'우리 지역의 제철 식재료로 건강한 식단을 만들어요.',illustration:'request-9.webp',request:'제철 농산물을 활용한 식단을 계획해요.',budget:32000,minutes:40,allergy:'없음',preference:'제철·지역 식재료'}];
+export const groups:{id:string;name:string;desc:string;className:string;illustration:string;items:Food[]}[]=[
+{id:'grain',name:'곡류',desc:'우리 몸에 에너지를 주는 식품이에요.',className:'grain',illustration:'food-0.webp',items:[['쌀밥',1200],['현미밥',1400],['오트밀',1600],['고구마',1800],['옥수수',1300]].map(([name,price])=>({name:String(name),price:Number(price),group:'곡류'}))},
+{id:'protein',name:'고기·생선·달걀·콩류',desc:'몸을 구성하는 단백질 식품이에요.',className:'protein',illustration:'food-1.webp',items:[['달걀',2500],['닭고기',6500],['고등어',5800],['두부',2400],['삶은 콩',2800]].map(([name,price])=>({name:String(name),price:Number(price),group:'고기·생선·달걀·콩류'}))},
+{id:'vegetable',name:'채소류',desc:'비타민과 무기질, 식이섬유가 풍부해요.',className:'vegetable',illustration:'food-2.webp',items:[['시금치',2200],['당근',1600],['브로콜리',2600],['오이',1700],['애호박',1900]].map(([name,price])=>({name:String(name),price:Number(price),group:'채소류'}))},
+{id:'fruit',name:'과일류',desc:'비타민과 식이섬유가 풍부해요.',className:'fruit',illustration:'food-3.webp',items:[['사과',2400],['바나나',2200],['딸기',3800],['귤',2100],['포도',4200]].map(([name,price])=>({name:String(name),price:Number(price),group:'과일류'}))},
+{id:'dairy',name:'우유·유제품류',desc:'뼈와 치아를 튼튼하게 해요.',className:'dairy',illustration:'food-4.webp',items:[['우유',2500],['플레인 요구르트',2300],['치즈',2800],['그릭요구르트',3200],['액상 요구르트',1900]].map(([name,price])=>({name:String(name),price:Number(price),group:'우유·유제품류'}))},
+{id:'fat',name:'유지·당류',desc:'에너지를 공급하지만 적당히 사용해요.',className:'fat',illustration:'food-5.webp',items:[['콩기름',800],['올리브유',1200],['참기름',1300],['설탕',350],['꿀',900]].map(([name,price])=>({name:String(name),price:Number(price),group:'유지·당류'}))}
+];
+export const roles=[{title:'식단 기획 담당자',desc:'가족의 영양 균형을 고려한 식단을 계획해요.',illustration:'role-0.webp',advice:'식품군의 다양성과 알레르기 조건을 먼저 확인하세요.',adjust:'식단 구성 변경'},{title:'식품 구매 담당자',desc:'신선하고 안전한 식재료를 선택하고 구매해요.',illustration:'role-1.webp',advice:'가격과 구매 단위를 비교하고 대체 재료를 찾아보세요.',adjust:'더 저렴한 재료 선택'},{title:'재고 관리 담당자',desc:'식재료의 보관과 재고를 효율적으로 관리해요.',illustration:'role-2.webp',advice:'집에 있는 재료를 먼저 활용해 낭비를 줄이세요.',adjust:'보유 재료 활용'},{title:'예산 분석 담당자',desc:'가족의 식비 예산을 분석하고 합리적으로 계획해요.',illustration:'role-3.webp',advice:'필요한 식품을 우선하고 구매 수량을 조정하세요.',adjust:'구매 수량 조정'}];
+export const events=[{title:'식재료 가격이 크게 올랐어요!',note:'가격·영양·대체 가능성을 확인하세요.',options:['제철 채소','냉동 채소','유사 영양 식품']},{title:'특정 식재료의 공급이 부족해요!',note:'원산지·재고·대체 식품을 확인하세요.',options:['두부','달걀','콩류']},{title:'원하는 재료가 품절되었어요!',note:'영양 정보와 알레르기를 비교하세요.',options:['다른 브랜드','동일 식품군 재료','집에 있는 재료']},{title:'친환경 제품의 가격이 인상되었어요!',note:'인증·가격·포장을 함께 검토하세요.',options:['제철 재료','포장 적은 재료','지역 농산물']},{title:'식재료 배송이 지연되고 있어요!',note:'보관 가능 기간과 가까운 구매처를 살펴보세요.',options:['지역 상점','재고 식재료','다른 배송 서비스']}];
